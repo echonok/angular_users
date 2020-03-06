@@ -3,7 +3,13 @@ const router = express.Router();
 const User = require('../models/user');
 
 router.get('/getAllUsers', (req, res) => {
-  res.send('users list');
+  User.getAllUsers({}, (err, users) => {
+    if (err) {
+      res.json({succes: false, msg: 'Something wrong with getting', error: err});
+    } else {
+      res.json({succes: true, msg: 'Got users', users: users});
+    }
+  });
 });
 
 router.post('/addUser', (req, res) => {
