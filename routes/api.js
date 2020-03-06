@@ -24,7 +24,7 @@ router.post('/addUser', (req, res) => {
   });
   User.addUser(newUser, (err, user) => {
     if (err) {
-      res.json({succes: false, msg: 'User is not added'});
+      res.json({succes: false, msg: 'User is not added', error: err});
     } else {
       res.json({succes: true, msg: 'User is added'});
     }
@@ -32,7 +32,22 @@ router.post('/addUser', (req, res) => {
 });
 
 router.post('/saveUser', (req, res) => {
-  res.send('save user');
+  let newUser = new User({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    title: req.body.title,
+    roles: req.body.roles,
+    status: req.body.status,
+    addDate: req.body.addDate,
+    lastUpdateDate: req.body.lastUpdateDate
+  });
+  User.addUser(newUser, (err, user) => {
+    if (err) {
+      res.json({succes: false, msg: 'User is not added', error: err});
+    } else {
+      res.json({succes: true, msg: 'User is added'});
+    }
+  });  
 });
 
 module.exports = router;

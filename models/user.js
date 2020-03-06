@@ -17,10 +17,10 @@ module.exports.getUserById = function(id, callback) {
   User.findById(id, callback);
 };
 
-module.exports.getAllUsers = function(id, callback) {
-  User.find(id, callback);
+module.exports.getAllUsers = function({}, callback) {
+  User.find({}, callback);
 };
 
 module.exports.addUser = function(newUser, callback) {
-  newUser.save(callback);
+  newUser.save(newUser, callback);
 };
