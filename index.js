@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const config = require('./config/db');
+const api = require('./routes/api');
 
 const app = express();
 
@@ -23,10 +24,11 @@ mongoose.connection.on('error', (error) => {
   console.log('error!', error);
 });
 
-
 app.get('/', (req, res) => {
   res.send('it works!');
 });
+
+app.use('/api', api);
 
 app.listen(port, () => {
   console.log(`started on port ${port}`);
