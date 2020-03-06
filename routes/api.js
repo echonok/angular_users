@@ -1,8 +1,28 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/user');
 
-router.get('/getUsers', (req, res) => {
+router.get('/getAllUsers', (req, res) => {
   res.send('users list');
+});
+
+router.post('/addUser', (req, res) => {
+  let newUser = new User({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    title: req.body.title,
+    roles: req.body.roles,
+    status: req.body.status,
+    addDate: req.body.addDate,
+    lastUpdateDate: req.body.lastUpdateDate
+  });
+  User.addUser(newUser, (err, user) => {
+    if (err) {
+      res.json({succes: false, msg: 'User is not added'});
+    } else {
+      res.json({succes: true, msg: 'User is added'});
+    }
+  });
 });
 
 router.post('/saveUser', (req, res) => {
