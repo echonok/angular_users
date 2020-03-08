@@ -281,51 +281,75 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _table_buttons_table_buttons_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./table-buttons/table-buttons.component */
+    "./src/app/table-buttons/table-buttons.component.ts");
+    /* harmony import */
+
+
+    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/platform-browser/animations */
     "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
     /* harmony import */
 
 
-    var _check_form_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _check_form_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ./check-form.service */
     "./src/app/check-form.service.ts");
     /* harmony import */
 
 
-    var _common_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _common_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ./common.service */
     "./src/app/common.service.ts");
     /* harmony import */
 
 
-    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! angular2-flash-messages */
     "./node_modules/angular2-flash-messages/__ivy_ngcc__/module/index.js");
     /* harmony import */
 
 
-    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_11___default =
+    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_12___default =
     /*#__PURE__*/
-    __webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_11__);
+    __webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_12__);
     /* harmony import */
 
 
-    var _angular_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var _angular_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
     /*! @angular/http */
     "./node_modules/@angular/http/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var ag_grid_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    /*! ag-grid-angular */
+    "./node_modules/ag-grid-angular/__ivy_ngcc__/main.js");
+    /* harmony import */
+
+
+    var ag_grid_angular__WEBPACK_IMPORTED_MODULE_14___default =
+    /*#__PURE__*/
+    __webpack_require__.n(ag_grid_angular__WEBPACK_IMPORTED_MODULE_14__);
+    /* harmony import */
+
+
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    /*! @angular/material/button */
+    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
 
     var appRoute = [{
       path: '',
@@ -344,14 +368,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       factory: function AppModule_Factory(t) {
         return new (t || AppModule)();
       },
-      providers: [_check_form_service__WEBPACK_IMPORTED_MODULE_9__["CheckFormService"], _common_service__WEBPACK_IMPORTED_MODULE_10__["CommonService"]],
-      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(appRoute), _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_11__["FlashMessagesModule"].forRoot(), _angular_http__WEBPACK_IMPORTED_MODULE_12__["HttpModule"]]]
+      providers: [_check_form_service__WEBPACK_IMPORTED_MODULE_10__["CheckFormService"], _common_service__WEBPACK_IMPORTED_MODULE_11__["CommonService"]],
+      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRoute), _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_12__["FlashMessagesModule"].forRoot(), _angular_http__WEBPACK_IMPORTED_MODULE_13__["HttpModule"], ag_grid_angular__WEBPACK_IMPORTED_MODULE_14__["AgGridModule"].withComponents([])], _angular_material_button__WEBPACK_IMPORTED_MODULE_15__["MatButtonModule"]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _users_users_component__WEBPACK_IMPORTED_MODULE_4__["UsersComponent"], _edit_user_edit_user_component__WEBPACK_IMPORTED_MODULE_5__["EditUserComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_11__["FlashMessagesModule"], _angular_http__WEBPACK_IMPORTED_MODULE_12__["HttpModule"]]
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _users_users_component__WEBPACK_IMPORTED_MODULE_4__["UsersComponent"], _edit_user_edit_user_component__WEBPACK_IMPORTED_MODULE_5__["EditUserComponent"], _table_buttons_table_buttons_component__WEBPACK_IMPORTED_MODULE_6__["TableButtonsComponent"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_12__["FlashMessagesModule"], _angular_http__WEBPACK_IMPORTED_MODULE_13__["HttpModule"], ag_grid_angular__WEBPACK_IMPORTED_MODULE_14__["AgGridModule"]],
+        exports: [_angular_material_button__WEBPACK_IMPORTED_MODULE_15__["MatButtonModule"]]
       });
     })();
     /*@__PURE__*/
@@ -361,10 +386,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _users_users_component__WEBPACK_IMPORTED_MODULE_4__["UsersComponent"], _edit_user_edit_user_component__WEBPACK_IMPORTED_MODULE_5__["EditUserComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(appRoute), _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_11__["FlashMessagesModule"].forRoot(), _angular_http__WEBPACK_IMPORTED_MODULE_12__["HttpModule"]],
-          providers: [_check_form_service__WEBPACK_IMPORTED_MODULE_9__["CheckFormService"], _common_service__WEBPACK_IMPORTED_MODULE_10__["CommonService"]],
-          bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _users_users_component__WEBPACK_IMPORTED_MODULE_4__["UsersComponent"], _edit_user_edit_user_component__WEBPACK_IMPORTED_MODULE_5__["EditUserComponent"], _table_buttons_table_buttons_component__WEBPACK_IMPORTED_MODULE_6__["TableButtonsComponent"]],
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRoute), _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_12__["FlashMessagesModule"].forRoot(), _angular_http__WEBPACK_IMPORTED_MODULE_13__["HttpModule"], ag_grid_angular__WEBPACK_IMPORTED_MODULE_14__["AgGridModule"].withComponents([])],
+          providers: [_check_form_service__WEBPACK_IMPORTED_MODULE_10__["CheckFormService"], _common_service__WEBPACK_IMPORTED_MODULE_11__["CommonService"]],
+          bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
+          exports: [_angular_material_button__WEBPACK_IMPORTED_MODULE_15__["MatButtonModule"]]
         }]
       }], null, null);
     })();
@@ -503,9 +529,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }));
         }
       }, {
+        key: "deleteUser",
+        value: function deleteUser(id) {
+          var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+          headers.append('Content-type', 'application/json');
+          return this.http.post('http://localhost:3000/api/deleteUser', id, {
+            headers: headers
+          }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+            return res.json();
+          }));
+        }
+      }, {
         key: "getAllUsers",
         value: function getAllUsers() {
-          return this.http.get('http://localhost:3000/api/getAllUsers');
+          return this.http.get('http://localhost:3000/api/getAllUsers').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+            return res.json();
+          }));
         }
       }]);
 
@@ -631,7 +670,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               cssClass: 'alert-danger',
               timeout: 4000
             });
-            console.log("firstName is empty");
             return false;
           }
 
@@ -640,7 +678,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               cssClass: 'alert-danger',
               timeout: 4000
             });
-            console.log("lastName is empty");
             return false;
           }
 
@@ -674,52 +711,46 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     EditUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: EditUserComponent,
       selectors: [["app-edit-user"]],
-      decls: 11,
+      decls: 9,
       vars: 2,
       consts: [[3, "submit"], ["type", "text", "name", "firstName", "placeholder", "First name", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "text", "name", "lastName", "placeholder", "Last name", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "submit", 1, "btn", "btn-save"], ["type", "reset", 1, "btn", "btn-cancel"]],
       template: function EditUserComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "edit-user works!");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "form", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("submit", function EditUserComponent_Template_form_submit_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("submit", function EditUserComponent_Template_form_submit_0_listener() {
             return ctx.userSaveClick();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "input", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "input", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function EditUserComponent_Template_input_ngModelChange_1_listener($event) {
+            return ctx.firstName = $event;
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "input", 2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function EditUserComponent_Template_input_ngModelChange_3_listener($event) {
-            return ctx.firstName = $event;
+            return ctx.lastName = $event;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "input", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "button", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function EditUserComponent_Template_input_ngModelChange_5_listener($event) {
-            return ctx.lastName = $event;
-          });
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Save");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Save");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "button", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Cancel");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Cancel");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -727,7 +758,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.firstName);
 
@@ -766,6 +797,167 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/table-buttons/table-buttons.component.ts":
+  /*!**********************************************************!*\
+    !*** ./src/app/table-buttons/table-buttons.component.ts ***!
+    \**********************************************************/
+
+  /*! exports provided: TableButtonsComponent */
+
+  /***/
+  function srcAppTableButtonsTableButtonsComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "TableButtonsComponent", function () {
+      return TableButtonsComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! angular2-flash-messages */
+    "./node_modules/angular2-flash-messages/__ivy_ngcc__/module/index.js");
+    /* harmony import */
+
+
+    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1___default =
+    /*#__PURE__*/
+    __webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__);
+    /* harmony import */
+
+
+    var _common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../common.service */
+    "./src/app/common.service.ts");
+
+    var TableButtonsComponent =
+    /*#__PURE__*/
+    function () {
+      function TableButtonsComponent(flashMessages, commonService) {
+        _classCallCheck(this, TableButtonsComponent);
+
+        this.flashMessages = flashMessages;
+        this.commonService = commonService;
+      }
+
+      _createClass(TableButtonsComponent, [{
+        key: "agInit",
+        value: function agInit(params) {
+          this.params = params;
+        }
+      }, {
+        key: "refresh",
+        value: function refresh() {
+          return false;
+        }
+      }, {
+        key: "editUser",
+        value: function editUser() {
+          console.log('this.params', this.params.data);
+        }
+      }, {
+        key: "deleteUser",
+        value: function deleteUser() {
+          var _this2 = this;
+
+          var deletedUser = {
+            _id: this.params.data._id
+          };
+          this.commonService.deleteUser(deletedUser).subscribe(function (data) {
+            if (!data.success) {
+              _this2.flashMessages.show(data.msg, {
+                cssClass: 'alert-danger',
+                timeout: 4000
+              });
+
+              return false;
+            } else {
+              _this2.flashMessages.show(data.msg, {
+                cssClass: 'alert-success',
+                timeout: 2000
+              });
+
+              return false;
+            }
+          });
+        }
+      }]);
+
+      return TableButtonsComponent;
+    }();
+
+    TableButtonsComponent.ɵfac = function TableButtonsComponent_Factory(t) {
+      return new (t || TableButtonsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__["FlashMessagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]));
+    };
+
+    TableButtonsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: TableButtonsComponent,
+      selectors: [["app-table-buttons"]],
+      decls: 5,
+      vars: 0,
+      consts: [[1, "btn", "btn-add-user", 2, "height", "20px", 3, "click"], [1, "btn", "btn-delete-user", 2, "height", "20px", 3, "click"]],
+      template: function TableButtonsComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TableButtonsComponent_Template_button_click_1_listener() {
+            return ctx.editUser();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "edit");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TableButtonsComponent_Template_button_click_3_listener() {
+            return ctx.deleteUser();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "delete");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      },
+      styles: [".btn[_ngcontent-%COMP%] {\r\n  background-color: blue;\r\n  color: white;\r\n  font-size: 10px;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFibGUtYnV0dG9ucy90YWJsZS1idXR0b25zLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLGVBQWU7QUFDakIiLCJmaWxlIjoic3JjL2FwcC90YWJsZS1idXR0b25zL3RhYmxlLWJ1dHRvbnMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idG4ge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGJsdWU7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIGZvbnQtc2l6ZTogMTBweDtcclxufSJdfQ== */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TableButtonsComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-table-buttons',
+          templateUrl: './table-buttons.component.html',
+          styleUrls: ['./table-buttons.component.css']
+        }]
+      }], function () {
+        return [{
+          type: angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__["FlashMessagesService"]
+        }, {
+          type: _common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]
+        }];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
   "./src/app/users/users.component.ts":
   /*!******************************************!*\
     !*** ./src/app/users/users.component.ts ***!
@@ -793,41 +985,125 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _table_buttons_table_buttons_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../table-buttons/table-buttons.component */
+    "./src/app/table-buttons/table-buttons.component.ts");
+    /* harmony import */
+
+
+    var _edit_user_edit_user_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../edit-user/edit-user.component */
+    "./src/app/edit-user/edit-user.component.ts");
+    /* harmony import */
+
+
+    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! angular2-flash-messages */
     "./node_modules/angular2-flash-messages/__ivy_ngcc__/module/index.js");
     /* harmony import */
 
 
-    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1___default =
+    var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default =
     /*#__PURE__*/
-    __webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__);
+    __webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
     /* harmony import */
 
 
-    var _common_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../common.service */
     "./src/app/common.service.ts");
+    /* harmony import */
+
+
+    var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/material/dialog */
+    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/dialog.js");
+    /* harmony import */
+
+
+    var ag_grid_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ag-grid-angular */
+    "./node_modules/ag-grid-angular/__ivy_ngcc__/main.js");
+    /* harmony import */
+
+
+    var ag_grid_angular__WEBPACK_IMPORTED_MODULE_6___default =
+    /*#__PURE__*/
+    __webpack_require__.n(ag_grid_angular__WEBPACK_IMPORTED_MODULE_6__);
 
     var UsersComponent =
     /*#__PURE__*/
     function () {
-      function UsersComponent(flashMessages, commonService) {
+      function UsersComponent(flashMessages, commonService, dialog) {
         _classCallCheck(this, UsersComponent);
 
         this.flashMessages = flashMessages;
         this.commonService = commonService;
+        this.dialog = dialog;
+        this.columnDefs = [{
+          headerName: 'ID',
+          field: '_id',
+          hide: true
+        }, {
+          headerName: 'First Name',
+          field: 'firstName'
+        }, {
+          headerName: 'Last Name',
+          field: 'lastName'
+        }, {
+          headerName: 'Title',
+          field: 'title'
+        }, {
+          headerName: 'Roles',
+          field: 'roles'
+        }, {
+          headerName: 'Status',
+          field: 'status'
+        }, {
+          headerName: 'Add Date',
+          field: 'addDate'
+        }, {
+          headerName: 'Last Update Date',
+          field: 'lastUpdateDate'
+        }, {
+          headerName: 'Actions',
+          field: 'actions',
+          cellRenderer: 'tableButtons'
+        }];
+        this.frameworkComponents = {
+          tableButtons: _table_buttons_table_buttons_component__WEBPACK_IMPORTED_MODULE_1__["TableButtonsComponent"]
+        };
       }
 
       _createClass(UsersComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          this.getAllUsersClick();
+        }
       }, {
         key: "getAllUsersClick",
         value: function getAllUsersClick() {
+          var _this3 = this;
+
           this.commonService.getAllUsers().subscribe(function (data) {
-            console.log('data', data);
+            if (!data.success) {
+              _this3.rowData = data.users;
+            }
           });
+        }
+      }, {
+        key: "addUserClick",
+        value: function addUserClick() {
+          console.log('clicked');
+          var dialogRef = this.dialog.open(_edit_user_edit_user_component__WEBPACK_IMPORTED_MODULE_2__["EditUserComponent"]);
+          dialogRef.afterClosed().subscribe(function (result) {
+            console.log("Dialog result: ".concat(result));
+          });
+        }
+      }, {
+        key: "onGridReady",
+        value: function onGridReady(params) {
+          params.api.sizeColumnsToFit();
         }
       }]);
 
@@ -835,34 +1111,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     UsersComponent.ɵfac = function UsersComponent_Factory(t) {
-      return new (t || UsersComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__["FlashMessagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]));
+      return new (t || UsersComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]));
     };
 
     UsersComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: UsersComponent,
       selectors: [["app-users"]],
-      decls: 4,
-      vars: 0,
-      consts: [[3, "click"]],
+      decls: 5,
+      vars: 3,
+      consts: [["mat-button", "", 3, "click"], [1, "ag-theme-balham", 2, "width", "100%", "height", "500px", 3, "rowData", "columnDefs", "frameworkComponents"]],
       template: function UsersComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "list of users!!!");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UsersComponent_Template_button_click_0_listener() {
+            return ctx.getAllUsersClick();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Get all users");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UsersComponent_Template_button_click_2_listener() {
-            return ctx.getAllUsersClick();
+            return ctx.addUserClick();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Get all users");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Add user");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "ag-grid-angular", 1);
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("rowData", ctx.rowData)("columnDefs", ctx.columnDefs)("frameworkComponents", ctx.frameworkComponents);
         }
       },
+      directives: [ag_grid_angular__WEBPACK_IMPORTED_MODULE_6__["AgGridAngular"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXJzL3VzZXJzLmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
@@ -877,9 +1166,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }]
       }], function () {
         return [{
-          type: angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__["FlashMessagesService"]
+          type: angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"]
         }, {
-          type: _common_service__WEBPACK_IMPORTED_MODULE_2__["CommonService"]
+          type: _common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+        }, {
+          type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]
         }];
       }, null);
     })();

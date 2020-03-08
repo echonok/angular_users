@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
   constructor(
     private flashMessages: FlashMessagesService,
     private commonService: CommonService,
-    public dialog: MatDialog
+    public matDialog: MatDialog
   ) {
      this.frameworkComponents = {
        tableButtons: TableButtonsComponent
@@ -52,8 +52,11 @@ export class UsersComponent implements OnInit {
 
   addUserClick() {
     console.log('clicked');
-    const dialogRef = this.dialog.open(EditUserComponent);
-
+    const dialogRef = this.matDialog.open(EditUserComponent, {
+      data: {
+        name: "New user"
+      }
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

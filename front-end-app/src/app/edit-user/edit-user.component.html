@@ -1,6 +1,13 @@
-<form (submit)="userSaveClick()">
-  <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="First name" class="form-control"><br>
-  <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="Last name" class="form-control"><br>
-  <button class="btn btn-save" type="submit">Save</button>
-  <button class="btn btn-cancel" type="reset">Cancel</button>
-</form>
+<h1>{{data.name}}</h1>
+<div mat-dialog-content>
+  <input type="text" [(ngModel)]="data._id" name="_id" placeholder="ID" class="form-control"><br>
+  <input type="text" [(ngModel)]="data.firstName" name="firstName" placeholder="First name" class="form-control"><br>
+  <input type="text" [(ngModel)]="data.lastName" name="lastName" placeholder="Last name" class="form-control"><br>
+  <input type="text" [(ngModel)]="data.title" name="title" placeholder="Title" class="form-control"><br>
+  <input type="text" [(ngModel)]="data.roles" name="roles" placeholder="Roles" class="form-control"><br>
+  <input type="text" [(ngModel)]="data.status" name="status" placeholder="Status" class="form-control"><br>
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="btn btn-save" (click)="userSaveClick()" mat-dialog-close cdkFocusInitial>Save</button>
+  <button mat-button class="btn btn-cancel" mat-dialog-close>Cancel</button>
+</div>

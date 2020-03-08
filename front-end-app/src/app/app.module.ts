@@ -16,7 +16,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
 import { AgGridModule } from 'ag-grid-angular';
 
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const appRoute: Routes = [
   {path: '', component: UsersComponent}
@@ -47,7 +48,8 @@ const appRoute: Routes = [
     AppComponent
   ],
   exports: [
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
   ]
 
 })

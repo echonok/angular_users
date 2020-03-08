@@ -3,6 +3,8 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { CommonService } from '../common.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
+import { EditUserComponent } from '../edit-user/edit-user.component';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-table-buttons',
@@ -13,7 +15,8 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
   public params: any;
   constructor(
     private flashMessages: FlashMessagesService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    public matDialog: MatDialog
   ) { }
 
   agInit(params: any): void {
@@ -25,7 +28,20 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
   }
 
   editUser() {
-    console.log('this.params', this.params.data);
+    const dialogRef = this.matDialog.open(EditUserComponent, {
+      data: {
+        name: "Edit user",
+        _id: this.params.data._id,
+        firstName: this.params.data.firstName,
+        lastName: this.params.data.lastName,
+        title: this.params.data.title,
+        roles: this.params.data.roles,
+        status: this.params.data.status
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   deleteUser() {
