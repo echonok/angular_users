@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { TableButtonsComponent } from './table-buttons/table-buttons.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +14,9 @@ import { CheckFormService } from './check-form.service';
 import { CommonService } from './common.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpModule } from '@angular/http';
+import { AgGridModule } from 'ag-grid-angular';
+
+import {MatButtonModule} from '@angular/material/button';
 
 const appRoute: Routes = [
   {path: '', component: UsersComponent}
@@ -22,7 +26,8 @@ const appRoute: Routes = [
   declarations: [
     AppComponent,
     UsersComponent,
-    EditUserComponent
+    EditUserComponent,
+    TableButtonsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,12 +36,19 @@ const appRoute: Routes = [
     RouterModule.forRoot(appRoute),
     FormsModule,
     FlashMessagesModule.forRoot(),
-    HttpModule
+    HttpModule,
+    AgGridModule.withComponents([])
   ],
   providers: [
     CheckFormService,
     CommonService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ],
+  exports: [
+    MatButtonModule
+  ]
+
 })
 export class AppModule { }

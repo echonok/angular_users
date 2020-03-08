@@ -13,14 +13,10 @@ const UserSchema = mongoose.Schema({
 
 const User = module.exports = mongoose.model('User', UserSchema);
 
-module.exports.getUserById = function(id, callback) {
-  User.findById(id, callback);
-};
+module.exports.getUserById = (id, callback) => User.findById(id, callback);
 
-module.exports.getAllUsers = function({}, callback) {
-  User.find({}, callback);
-};
+module.exports.getAllUsers = (callback) => User.find({}, callback);
 
-module.exports.addUser = function(newUser, callback) {
-  newUser.save(newUser, callback);
-};
+module.exports.addUser = (newUser, callback) => User.create(newUser, callback);
+
+module.exports.deleteUser = (user, callback) => User.findOneAndDelete(user, callback);

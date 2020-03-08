@@ -7,7 +7,9 @@ import { map } from 'rxjs/operators';
 })
 export class CommonService {
 
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http
+  ) { }
 
   addUser(user) {
     let headers = new Headers();
@@ -18,9 +20,18 @@ export class CommonService {
       {headers: headers}).pipe(map(res => res.json()));
   }
 
+  deleteUser(id) {
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post(
+      'http://localhost:3000/api/deleteUser',
+      id,
+      {headers: headers}).pipe(map(res => res.json()));
+  }
+
   getAllUsers() {
     return this.http.get(
       'http://localhost:3000/api/getAllUsers'
-    )
+    ).pipe(map(res => res.json()));
   }
 }

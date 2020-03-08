@@ -1,2 +1,11 @@
-<p>list of users!!!</p>
-<button (click)="getAllUsersClick()">Get all users</button>
+<button mat-button (click)="getAllUsersClick()">Get all users</button>
+<button mat-button (click)="addUserClick()">Add user</button>
+
+<ag-grid-angular
+    style="width: 100%; height: 500px;"
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [frameworkComponents]="frameworkComponents"
+    >
+</ag-grid-angular>

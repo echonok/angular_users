@@ -18,23 +18,24 @@ export class EditUserComponent implements OnInit {
     private checkForm: CheckFormService,
     private flashMessages: FlashMessagesService,
     private router: Router,
-    private commonService: CommonService,
+    private commonService: CommonService
   ) { }
 
   ngOnInit(): void {
   }
 
   userSaveClick() {
+
     const user = {
       firstName: this.firstName,
       lastName: this.lastName
     };
+
     if (!this.checkForm.checkValue(user.firstName)) {
       this.flashMessages.show('firstName is empty', {
         cssClass: 'alert-danger',
         timeout: 4000
       });
-      console.log(`firstName is empty`);
       return false;
     }
     if (!this.checkForm.checkValue(user.lastName)) {
@@ -42,7 +43,6 @@ export class EditUserComponent implements OnInit {
         cssClass: 'alert-danger',
         timeout: 4000
       });
-      console.log(`lastName is empty`);
       return false;
     }
     this.commonService.addUser(user).subscribe(data => {

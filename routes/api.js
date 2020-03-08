@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/user');
 
 router.get('/getAllUsers', (req, res) => {
-  User.getAllUsers({}, (err, users) => {
+  User.getAllUsers((err, users) => {
     if (err) {
       res.json({succes: false, msg: 'Something wrong with getting', error: err});
     } else {
@@ -22,11 +22,22 @@ router.post('/addUser', (req, res) => {
     addDate: req.body.addDate,
     lastUpdateDate: req.body.lastUpdateDate
   });
-  User.addUser(newUser, (err, user) => {
+  User.addUser(newUser, (err) => {
     if (err) {
       res.json({succes: false, msg: 'User is not added', error: err});
     } else {
       res.json({succes: true, msg: 'User is added'});
+    }
+  });
+});
+
+router.post('/deleteUser', (req, res) => {
+  let deletedUser = { _id: req.body._id };
+  User.deleteUser(deletedUser, (err) => {
+    if (err) {
+      res.json({succes: false, msg: 'User is not deleted', error: err});
+    } else {
+      res.json({succes: true, msg: 'User is deleted'});
     }
   });
 });
