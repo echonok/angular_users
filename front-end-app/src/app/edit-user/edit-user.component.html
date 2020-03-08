@@ -1,1 +1,8 @@
 <p>edit-user works!</p>
+
+<form (submit)="userSaveClick()">
+  <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="First name" class="form-control"><br>
+  <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="Last name" class="form-control"><br>
+  <button class="btn btn-save" type="submit">Save</button>
+  <button class="btn btn-cancel" type="reset">Cancel</button>
+</form>

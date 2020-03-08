@@ -7,6 +7,17 @@ import { UsersComponent } from './users/users.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CheckFormService } from './check-form.service';
+import { CommonService } from './common.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { HttpModule } from '@angular/http';
+
+const appRoute: Routes = [
+  {path: '', component: UsersComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +27,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoute),
+    FormsModule,
+    FlashMessagesModule.forRoot(),
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    CheckFormService,
+    CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
