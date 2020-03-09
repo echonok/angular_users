@@ -31,11 +31,12 @@ export class EditUserComponent implements OnInit {
   roles: String;
   status: String;
   name: String;
-  userAdded: Boolean;
 
   rolesControl = new FormControl();
   rolesList: string[] = ['Administrator', 'Sales Manager', 'Sales Representatibe', 'Account Manager', 'Product', 'Marketing'];
   selected: string[];
+
+  checked = false;
 
   constructor(
     private checkForm: CheckFormService,
@@ -47,7 +48,8 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (this.data.roles.length > 0) {
+    this.checked = this.data.status === 'Enabled' ? true : false;
+    if (this.data.roles) {
       this.rolesControl.setValue(this.data.roles.split(', '));
     }
   }
@@ -56,13 +58,15 @@ export class EditUserComponent implements OnInit {
     this.data.roles = data.value.join(', ');
   }
 
+  onChange(value) {
+    this.data.status = value.checked === true ? 'Enabled' : 'Disabled';
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   userSaveClick() {
-
-    this.userAdded = false;
 
     const user = {
       _id: this.data._id,
@@ -101,7 +105,6 @@ export class EditUserComponent implements OnInit {
             cssClass: 'alert-success',
             timeout: 2000
           });
-          this.userAdded = true;
           return false;
         }
       });
@@ -119,7 +122,6 @@ export class EditUserComponent implements OnInit {
             cssClass: 'alert-success',
             timeout: 2000
           });
-          this.userAdded = true;
           return false;
         }
       });
