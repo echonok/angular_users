@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { CommonService } from '../common.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -13,6 +13,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class TableButtonsComponent implements ICellRendererAngularComp {
   public params: any;
+  
+  @Output() onClicked = new EventEmitter<boolean>()
+
   constructor(
     private flashMessages: FlashMessagesService,
     private commonService: CommonService,
@@ -44,7 +47,7 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
     });
   }
 
-  deleteUser() {
+  deleteUser(): void {
     const deletedUser = { _id: this.params.data._id };
     this.commonService.deleteUser(deletedUser).subscribe(data => {
       if (!data.success) {
@@ -61,6 +64,8 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
         return false;
       }
     });
+    console.log('trying to emit');
+    this.onClicked.emit(this.params.data);
   }
 
 }

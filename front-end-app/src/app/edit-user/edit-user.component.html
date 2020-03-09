@@ -1,4 +1,4 @@
-<h1>{{data.name}}</h1>
+<h1 mat-dialog-title>{{data.name}}</h1>
 <div mat-dialog-content>
   <input type="text" [(ngModel)]="data._id" name="_id" placeholder="ID" class="form-control"><br>
   <input type="text" [(ngModel)]="data.firstName" name="firstName" placeholder="First name" class="form-control"><br>
@@ -9,5 +9,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button class="btn btn-save" (click)="userSaveClick()" mat-dialog-close cdkFocusInitial>Save</button>
-  <button mat-button class="btn btn-cancel" mat-dialog-close>Cancel</button>
+  <button mat-button class="btn btn-cancel" (click)="onNoClick()" mat-dialog-close>Cancel</button>
 </div>

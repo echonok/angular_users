@@ -30,6 +30,7 @@ export class EditUserComponent implements OnInit {
   roles: String;
   status: String;
   name: String;
+  userAdded: Boolean;
 
   constructor(
     private checkForm: CheckFormService,
@@ -50,6 +51,8 @@ export class EditUserComponent implements OnInit {
 
   userSaveClick() {
 
+    this.userAdded = false;
+
     const user = {
       _id: this.data._id,
       firstName: this.data.firstName,
@@ -58,9 +61,6 @@ export class EditUserComponent implements OnInit {
       roles: this.data.roles,
       status: this.data.status
     };
-
-    //console.log('this.firstName', this.firstName);
-    //console.log('this.data', this.data);
 
     if (!this.checkForm.checkValue(user.firstName)) {
       this.flashMessages.show('firstName is empty', {
@@ -88,8 +88,12 @@ export class EditUserComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 2000
         });
+        this.userAdded = true;
+        console.log('закрываем');
         return false;
       }
     });
+    console.log('this.userAdded', this.userAdded);
+    this.dialogRef.close();
   }
 }

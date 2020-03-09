@@ -51,16 +51,19 @@ export class UsersComponent implements OnInit {
   }
 
   addUserClick() {
-    console.log('clicked');
     const dialogRef = this.matDialog.open(EditUserComponent, {
       data: {
         name: "New user"
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      this.getAllUsersClick();
     });
 
+  }
+
+  onChanged(deleted:any) {
+    console.log('deleted =>>>', deleted);
   }
 
   onGridReady(params) {
