@@ -43,7 +43,7 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      //console.log(`Dialog result: ${result}`);
     });
   }
 
@@ -64,7 +64,7 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
         return false;
       }
     });
-    console.log('trying to emit');
+    //console.log('trying to emit');
     this.onClicked.emit(this.params.data);
   }
 

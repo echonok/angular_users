@@ -76,24 +76,44 @@ export class EditUserComponent implements OnInit {
       });
       return false;
     }
-    this.commonService.addUser(user).subscribe(data => {
-      if (!data.success) {
-        this.flashMessages.show(data.msg, {
-          cssClass: 'alert-danger',
-          timeout: 4000
-        });
-        return false;
-      } else {
-        this.flashMessages.show(data.msg, {
-          cssClass: 'alert-success',
-          timeout: 2000
-        });
-        this.userAdded = true;
-        console.log('закрываем');
-        return false;
-      }
-    });
-    console.log('this.userAdded', this.userAdded);
-    this.dialogRef.close();
+
+    if (this.data._id === undefined) {
+      this.commonService.addUser(user).subscribe(data => {
+        if (!data.success) {
+          this.flashMessages.show(data.msg, {
+            cssClass: 'alert-danger',
+            timeout: 4000
+          });
+          return false;
+        } else {
+          this.flashMessages.show(data.msg, {
+            cssClass: 'alert-success',
+            timeout: 2000
+          });
+          this.userAdded = true;
+          return false;
+        }
+      });
+      this.dialogRef.close();
+    } else {
+      this.commonService.editUser(user).subscribe(data => {
+        if (!data.success) {
+          this.flashMessages.show(data.msg, {
+            cssClass: 'alert-danger',
+            timeout: 4000
+          });
+          return false;
+        } else {
+          this.flashMessages.show(data.msg, {
+            cssClass: 'alert-success',
+            timeout: 2000
+          });
+          this.userAdded = true;
+          return false;
+        }
+      });
+      this.dialogRef.close();
+    }
+
   }
 }

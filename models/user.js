@@ -20,3 +20,5 @@ module.exports.getAllUsers = (callback) => User.find({}, callback);
 module.exports.addUser = (newUser, callback) => User.create(newUser, callback);
 
 module.exports.deleteUser = (user, callback) => User.findOneAndDelete(user, callback);
+
+module.exports.editUser = (id, user, callback) => User.findByIdAndUpdate(id, user, callback);  

@@ -41,20 +41,20 @@ router.post('/deleteUser', (req, res) => {
   });
 });
 
-router.post('/saveUser', (req, res) => {
-  let newUser = new User({
+router.post('/editUser', (req, res) => {
+  let newData = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     title: req.body.title,
     roles: req.body.roles,
     status: req.body.status,
     lastUpdateDate: new Date()
-  });
-  User.addUser(newUser, (err, user) => {
+  };
+  User.editUser({_id: req.body._id}, newData, (err, user) => {
     if (err) {
-      res.json({succes: false, msg: 'User is not added', error: err});
+      res.json({succes: false, msg: 'User is not edited', error: err});
     } else {
-      res.json({succes: true, msg: 'User is added'});
+      res.json({succes: true, msg: 'User is edited'});
     }
   });  
 });

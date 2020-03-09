@@ -69,8 +69,8 @@ export class UsersComponent implements OnInit {
 
   }
 
-  onChanged(deleted:any) {
-    console.log('deleted =>>>', deleted);
+  onChanged(deleted: any) {
+    //console.log('deleted =>>>', deleted);
   }
 
   onGridReady(params) {

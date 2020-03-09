@@ -20,6 +20,15 @@ export class CommonService {
       {headers: headers}).pipe(map(res => res.json()));
   }
 
+  editUser(user) {
+    let headers = new Headers();
+    headers.append('Content-type', 'application/json');
+    return this.http.post(
+      'http://localhost:3000/api/editUser',
+      user,
+      {headers: headers}).pipe(map(res => res.json()));
+  }
+
   deleteUser(id) {
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
