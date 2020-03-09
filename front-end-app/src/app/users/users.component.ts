@@ -4,6 +4,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 import { TableButtonsComponent } from '../table-buttons/table-buttons.component';
 import { EditUserComponent } from '../edit-user/edit-user.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-users',
@@ -17,7 +18,8 @@ export class UsersComponent implements OnInit {
   constructor(
     private flashMessages: FlashMessagesService,
     private commonService: CommonService,
-    public matDialog: MatDialog
+    public matDialog: MatDialog,
+    public datepipe: DatePipe
   ) {
      this.frameworkComponents = {
        tableButtons: TableButtonsComponent
@@ -45,6 +47,10 @@ export class UsersComponent implements OnInit {
   getAllUsersClick() {
     this.commonService.getAllUsers().subscribe(data => {
       if (!data.success) {
+        for (let user of data.users) {
+          user.addDate = this.datepipe.transform(user.addDate, 'dd-MMM-yyyy');
+          user.lastUpdateDate = this.datepipe.transform(user.lastUpdateDate, 'dd-MMM-yyyy');
+        }
         this.rowData = data.users;
       }
     });

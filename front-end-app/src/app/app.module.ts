@@ -19,6 +19,8 @@ import { AgGridModule } from 'ag-grid-angular';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 
+import { DatePipe } from '@angular/common';
+
 const appRoute: Routes = [
   {path: '', component: UsersComponent}
 ];
@@ -42,7 +44,8 @@ const appRoute: Routes = [
   ],
   providers: [
     CheckFormService,
-    CommonService
+    CommonService,
+    DatePipe
   ],
   bootstrap: [
     AppComponent
