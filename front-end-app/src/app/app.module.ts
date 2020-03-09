@@ -18,6 +18,8 @@ import { AgGridModule } from 'ag-grid-angular';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { DatePipe } from '@angular/common';
 
@@ -40,7 +42,9 @@ const appRoute: Routes = [
     FormsModule,
     FlashMessagesModule.forRoot(),
     HttpModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [
     CheckFormService,
@@ -53,6 +57,7 @@ const appRoute: Routes = [
   exports: [
     MatButtonModule,
     MatDialogModule,
+    MatInputModule
   ]
 
 })

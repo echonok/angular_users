@@ -1,13 +1,47 @@
-<h1 mat-dialog-title>{{data.name}}</h1>
 <div mat-dialog-content>
-  <input type="text" [(ngModel)]="data._id" name="_id" placeholder="ID" class="form-control"><br>
-  <input type="text" [(ngModel)]="data.firstName" name="firstName" placeholder="First name" class="form-control"><br>
-  <input type="text" [(ngModel)]="data.lastName" name="lastName" placeholder="Last name" class="form-control"><br>
-  <input type="text" [(ngModel)]="data.title" name="title" placeholder="Title" class="form-control"><br>
-  <input type="text" [(ngModel)]="data.roles" name="roles" placeholder="Roles" class="form-control"><br>
-  <input type="text" [(ngModel)]="data.status" name="status" placeholder="Status" class="form-control"><br>
+  <form class="input-form">
+    <h1 mat-dialog-title>{{ data.name }}</h1>
+    
+    <mat-form-field class="input-full-width">
+      <mat-label>ID</mat-label>
+      <input disabled matInput placeholder="ID" [(ngModel)]="data._id" name="_id">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="input-full-width">
+      <mat-label>First name</mat-label>
+      <input matInput placeholder="First name" [(ngModel)]="data.firstName" name="firstName">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="input-full-width">
+      <mat-label>Last name</mat-label>
+      <input matInput placeholder="Last name" [(ngModel)]="data.lastName" name="lastName">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="input-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="title" [(ngModel)]="data.title" name="title">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="input-full-width">
+      <mat-label>Roles</mat-label>
+      <input matInput placeholder="roles" [(ngModel)]="data.roles" name="roles">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field class="input-full-width">
+      <mat-label>Status</mat-label>
+      <input matInput placeholder="status" [(ngModel)]="data.status" name="status">
+    </mat-form-field>
+    <br>
+
+  </form>
+
 </div>
 <div mat-dialog-actions>
-  <button mat-button class="btn btn-save" (click)="userSaveClick()" mat-dialog-close cdkFocusInitial>Save</button>
-  <button mat-button class="btn btn-cancel" (click)="onNoClick()" mat-dialog-close>Cancel</button>
+  <button mat-button (click)="userSaveClick()" mat-dialog-close cdkFocusInitial>Save</button>
+  <button mat-button (click)="onNoClick()" mat-dialog-close>Cancel</button>
 </div>
