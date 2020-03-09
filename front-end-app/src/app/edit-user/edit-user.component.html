@@ -2,7 +2,7 @@
   <form class="input-form">
     <h1 mat-dialog-title>{{ data.name }}</h1>
     
-    <mat-form-field class="input-full-width">
+    <mat-form-field [hidden]="true" class="input-full-width">
       <mat-label>ID</mat-label>
       <input disabled matInput placeholder="ID" [(ngModel)]="data._id" name="_id">
     </mat-form-field>
@@ -22,21 +22,24 @@
 
     <mat-form-field class="input-full-width">
       <mat-label>Title</mat-label>
-      <input matInput placeholder="title" [(ngModel)]="data.title" name="title">
+      <input matInput placeholder="Title" [(ngModel)]="data.title" name="title">
     </mat-form-field>
     <br>
 
-    <mat-form-field class="input-full-width">
+    <mat-form-field>
       <mat-label>Roles</mat-label>
-      <input matInput placeholder="roles" [(ngModel)]="data.roles" name="roles">
+      <mat-select [formControl]="rolesControl" (selectionChange)="filter($event)" multiple [(value)]="selected">
+        <mat-option *ngFor="let role of rolesList" [value]="role" name="role">{{ role }}</mat-option>
+      </mat-select>
     </mat-form-field>
     <br>
 
     <mat-form-field class="input-full-width">
       <mat-label>Status</mat-label>
-      <input matInput placeholder="status" [(ngModel)]="data.status" name="status">
+      <input matInput placeholder="Status" [(ngModel)]="data.status" name="status">
     </mat-form-field>
     <br>
+
 
   </form>
 

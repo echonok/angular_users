@@ -3,7 +3,8 @@ import { CheckFormService } from '../check-form.service';
 import { CommonService } from '../common.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormControl } from '@angular/forms';
 
 export interface DialogData {
   _id: string;
@@ -32,19 +33,29 @@ export class EditUserComponent implements OnInit {
   name: String;
   userAdded: Boolean;
 
+  rolesControl = new FormControl();
+  rolesList: string[] = ['Administrator', 'Sales Manager', 'Sales Representatibe', 'Account Manager', 'Product', 'Marketing'];
+  selected: string[];
+
   constructor(
     private checkForm: CheckFormService,
     private flashMessages: FlashMessagesService,
     private router: Router,
     private commonService: CommonService,
-    public matDialog: MatDialog,
     public dialogRef: MatDialogRef<EditUserComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    if (this.data.roles.length > 0) {
+      this.rolesControl.setValue(this.data.roles.split(', '));
+    }
   }
-  
+
+  filter(data) {
+    this.data.roles = data.value.join(', ');
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
