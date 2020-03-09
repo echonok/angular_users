@@ -48,7 +48,8 @@ export class UsersComponent implements OnInit {
     this.commonService.getAllUsers().subscribe(data => {
       if (!data.success) {
         for (let user of data.users) {
-          user.addDate = this.datepipe.transform(user.addDate, 'dd-MMM-yyyy');
+          const dateFromId = new Date(parseInt(user._id.substring(0, 8), 16) * 1000);
+          user.addDate = this.datepipe.transform(dateFromId, 'dd-MMM-yyyy');
           user.lastUpdateDate = this.datepipe.transform(user.lastUpdateDate, 'dd-MMM-yyyy');
         }
         this.rowData = data.users;

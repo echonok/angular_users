@@ -19,8 +19,7 @@ router.post('/addUser', (req, res) => {
     title: req.body.title,
     roles: req.body.roles,
     status: req.body.status,
-    addDate: req.body.addDate,
-    lastUpdateDate: req.body.lastUpdateDate
+    lastUpdateDate: new Date()
   });
   User.addUser(newUser, (err) => {
     if (err) {
@@ -49,8 +48,7 @@ router.post('/saveUser', (req, res) => {
     title: req.body.title,
     roles: req.body.roles,
     status: req.body.status,
-    addDate: req.body.addDate,
-    lastUpdateDate: req.body.lastUpdateDate
+    lastUpdateDate: new Date()
   });
   User.addUser(newUser, (err, user) => {
     if (err) {
