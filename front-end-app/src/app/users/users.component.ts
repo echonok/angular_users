@@ -26,6 +26,12 @@ export class UsersComponent implements OnInit {
      };
   }
 
+  gridOptions = {
+    defaultColDef: {
+      resizable: true
+    },
+  }
+
   ngOnInit(): void {
     this.getAllUsersClick();
   }
@@ -60,7 +66,12 @@ export class UsersComponent implements OnInit {
   addUserClick() {
     const dialogRef = this.matDialog.open(EditUserComponent, {
       data: {
-        name: "New user"
+        name: 'New user',
+        status: 'Enabled',
+        firstName: '',
+        lastName: '',
+        title: '',
+        roles: ''
       }
     });
     dialogRef.afterClosed().subscribe(result => {

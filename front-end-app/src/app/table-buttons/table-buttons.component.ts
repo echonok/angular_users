@@ -13,7 +13,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class TableButtonsComponent implements ICellRendererAngularComp {
   public params: any;
-  
+
   @Output() onClicked = new EventEmitter<boolean>()
 
   constructor(
@@ -33,7 +33,7 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
   editUser() {
     const dialogRef = this.matDialog.open(EditUserComponent, {
       data: {
-        name: "Edit user",
+        name: 'Edit user',
         _id: this.params.data._id,
         firstName: this.params.data.firstName,
         lastName: this.params.data.lastName,
