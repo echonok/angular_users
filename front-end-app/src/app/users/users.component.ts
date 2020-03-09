@@ -26,6 +26,12 @@ export class UsersComponent implements OnInit {
      };
   }
 
+  gridOptions = {
+    defaultColDef: {
+      resizable: true
+    },
+  }
+
   ngOnInit(): void {
     this.getAllUsersClick();
   }
