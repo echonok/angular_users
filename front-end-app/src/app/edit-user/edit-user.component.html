@@ -10,13 +10,13 @@
 
     <mat-form-field class="input-full-width">
       <mat-label>First name</mat-label>
-      <input matInput placeholder="First name" [(ngModel)]="data.firstName" name="firstName">
+      <input matInput placeholder="First name" [(ngModel)]="data.firstName" name="firstName" required cdkFocusInitial>
     </mat-form-field>
     <br>
 
     <mat-form-field class="input-full-width">
       <mat-label>Last name</mat-label>
-      <input matInput placeholder="Last name" [(ngModel)]="data.lastName" name="lastName">
+      <input matInput placeholder="Last name" [(ngModel)]="data.lastName" name="lastName" required>
     </mat-form-field>
     <br>
 
@@ -44,7 +44,7 @@
   </form>
 
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="userSaveClick()" mat-dialog-close cdkFocusInitial>Save</button>
-  <button mat-button (click)="onNoClick()" mat-dialog-close>Cancel</button>
+<div mat-dialog-actions class="buttons">
+  <button class="button" mat-raised-button color="primary" (click)="userSaveClick()" mat-dialog-close>Save</button>
+  <button class="button" mat-raised-button color="warn" (click)="onNoClick()" mat-dialog-close>Cancel</button>
 </div>

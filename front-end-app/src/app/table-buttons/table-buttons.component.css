@@ -1,5 +1,4 @@
-.btn {
-  background-color: blue;
-  color: white;
-  font-size: 10px;
+button {
+  margin-right: 10px;
+  height: 25px;
 }

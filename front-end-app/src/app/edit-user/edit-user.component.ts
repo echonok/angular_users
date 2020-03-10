@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter, Input, Output } from '@angular/core';
 import { CheckFormService } from '../check-form.service';
 import { CommonService } from '../common.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -37,6 +37,9 @@ export class EditUserComponent implements OnInit {
   selected: string[];
 
   checked = false;
+
+  @Output()
+  onChanged = new EventEmitter<boolean>();
 
   constructor(
     private checkForm: CheckFormService,
@@ -78,14 +81,15 @@ export class EditUserComponent implements OnInit {
     };
 
     if (!this.checkForm.checkValue(user.firstName)) {
-      this.flashMessages.show('firstName is empty', {
+      this.flashMessages.show('First name is empty', {
         cssClass: 'alert-danger',
         timeout: 4000
       });
       return false;
     }
+
     if (!this.checkForm.checkValue(user.lastName)) {
-      this.flashMessages.show('lastName is empty', {
+      this.flashMessages.show('Last name is empty', {
         cssClass: 'alert-danger',
         timeout: 4000
       });

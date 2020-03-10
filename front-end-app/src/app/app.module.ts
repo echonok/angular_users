@@ -24,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { DatePipe } from '@angular/common';
+import { AddUserComponent } from './add-user/add-user.component';
 
 const appRoute: Routes = [
   {path: '', component: UsersComponent}
@@ -34,7 +35,8 @@ const appRoute: Routes = [
     AppComponent,
     UsersComponent,
     EditUserComponent,
-    TableButtonsComponent
+    TableButtonsComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
