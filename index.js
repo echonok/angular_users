@@ -8,8 +8,8 @@ const api = require('./routes/api');
 
 const app = express();
 
-const port = 3000;
-//const port = process.env.PORT || 8080;
+//const port = 3000;
+const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -31,10 +31,10 @@ app.get('/', (req, res) => {
 
 app.use('/api', api);
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'public/index.html'));
-// })
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 app.listen(port, () => {
   console.log(`started on port ${port}`);
-})
+});

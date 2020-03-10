@@ -15,7 +15,7 @@ export class CommonService {
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
     return this.http.post(
-      'http://localhost:3000/api/addUser',
+      'api/addUser',
       user,
       {headers: headers}).pipe(map(res => res.json()));
   }
@@ -24,7 +24,7 @@ export class CommonService {
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
     return this.http.post(
-      'http://localhost:3000/api/editUser',
+      'api/editUser',
       user,
       {headers: headers}).pipe(map(res => res.json()));
   }
@@ -33,14 +33,14 @@ export class CommonService {
     let headers = new Headers();
     headers.append('Content-type', 'application/json');
     return this.http.post(
-      'http://localhost:3000/api/deleteUser',
+      'api/deleteUser',
       id,
       {headers: headers}).pipe(map(res => res.json()));
   }
 
   getAllUsers() {
     return this.http.get(
-      'http://localhost:3000/api/getAllUsers'
+      'api/getAllUsers'
     ).pipe(map(res => res.json()));
   }
 }
