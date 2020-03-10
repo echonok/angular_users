@@ -14,8 +14,6 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 export class TableButtonsComponent implements ICellRendererAngularComp {
   public params: any;
 
-  @Output() onClicked = new EventEmitter<boolean>()
-
   constructor(
     private flashMessages: FlashMessagesService,
     private commonService: CommonService,
@@ -24,10 +22,6 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
 
   agInit(params: any): void {
     this.params = params;
-  }
-
-  refresh(): boolean {
-      return false;
   }
 
   editUser() {
@@ -43,7 +37,7 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      //console.log(`Dialog result: ${result}`);
+      this.refreshTableFromButtons();
     });
   }
 
@@ -55,17 +49,24 @@ export class TableButtonsComponent implements ICellRendererAngularComp {
           cssClass: 'alert-danger',
           timeout: 4000
         });
+        this.refreshTableFromButtons();
         return false;
       } else {
         this.flashMessages.show(data.msg, {
           cssClass: 'alert-success',
           timeout: 2000
         });
+        this.refreshTableFromButtons();
         return false;
       }
     });
-    //console.log('trying to emit');
-    this.onClicked.emit(this.params.data);
   }
 
+  refreshTableFromButtons() {
+    this.params.context.componentParent.methodFromParent();
+  }
+
+  refresh(): boolean {
+    return true;
+  }
 }

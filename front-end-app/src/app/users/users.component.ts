@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonService } from '../common.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { TableButtonsComponent } from '../table-buttons/table-buttons.component';
 import { EditUserComponent } from '../edit-user/edit-user.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DatePipe } from '@angular/common';
+import { Observable, Subscription, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -14,6 +15,8 @@ import { DatePipe } from '@angular/common';
 export class UsersComponent implements OnInit {
 
   frameworkComponents: any;
+  private eventsSubscription: Subscription;
+  public context;
 
   constructor(
     private flashMessages: FlashMessagesService,
@@ -21,19 +24,30 @@ export class UsersComponent implements OnInit {
     public matDialog: MatDialog,
     public datepipe: DatePipe
   ) {
-     this.frameworkComponents = {
+    this.context = { componentParent: this };
+    this.frameworkComponents = {
        tableButtons: TableButtonsComponent
      };
   }
+
+  @Input()
+  events: Observable<void>;
+
+  eventsSubject: Subject<void> = new Subject<void>();
 
   gridOptions = {
     defaultColDef: {
       resizable: true
     },
+  };
+
+  ngOnInit() {
+    this.getAllUsers();
+    this.eventsSubscription = this.events.subscribe(() => this.getAllUsers());
   }
 
-  ngOnInit(): void {
-    this.getAllUsersClick();
+  ngOnDestroy() {
+    this.eventsSubscription.unsubscribe();
   }
 
   columnDefs = [
@@ -47,10 +61,10 @@ export class UsersComponent implements OnInit {
     {headerName: 'Last Update Date', field: 'lastUpdateDate' },
     {headerName: 'Actions', field: 'actions', cellRenderer: 'tableButtons' }
   ];
-  
+
   rowData: any;
 
-  getAllUsersClick() {
+  getAllUsers() {
     this.commonService.getAllUsers().subscribe(data => {
       if (!data.success) {
         for (let user of data.users) {
@@ -63,29 +77,8 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  addUserClick() {
-    const dialogRef = this.matDialog.open(EditUserComponent, {
-      data: {
-        name: 'New user',
-        status: 'Enabled',
-        firstName: '',
-        lastName: '',
-        title: '',
-        roles: ''
-      }
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      this.getAllUsersClick();
-    });
-
-  }
-
-  onChanged(deleted: any) {
-    //console.log('deleted =>>>', deleted);
-  }
-
-  onGridReady(params) {
-    params.api.sizeColumnsToFit();
+  methodFromParent() {
+    this.getAllUsers();
   }
 
 }

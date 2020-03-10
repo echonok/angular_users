@@ -7,7 +7,7 @@ export class CheckFormService {
 
   constructor() { }
   checkValue(value) {
-    if (value === undefined) {
+    if (value === '') {
       return false;
     } else {
       return true;
